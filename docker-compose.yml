@@ -1,0 +1,14 @@
+version: '2'
+services:
+  server:
+    image: petergrace/opentsdb-docker
+    ports:
+      - "4242:4242"
+    volumes:
+      - .:/app
+  server:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
